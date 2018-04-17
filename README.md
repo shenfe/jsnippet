@@ -36,9 +36,9 @@
 import someStuff from '@shenfe/jsnippet/someStuff'
 ```
 
-建议像上面这样按需引入snippet。当你对其他snippet的质量和副作用不能保证时，仅仅引入自己放心的snippet是明智的。
+建议像上面这样**按需引入**snippet。当你对其他snippet的质量和副作用不能保证时，仅仅引入自己放心的snippet是明智的。
 
-当然要这样引入也可以：
+当然，要像下面这样引入也可以，但如果没有treeshaking的话，会将所有snippet都引入：
 
 ```js
 import { someStuff } from '@shenfe/jsnippet'
