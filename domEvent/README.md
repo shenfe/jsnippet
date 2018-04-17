@@ -12,4 +12,9 @@ $on(targetElement, eventName, handlerFunction);
 $on(targetElement, eventName, selector, handlerFunction); // delegate
 ```
 
-其中`targetElement`可以是元素也可以是选择器字符串；`eventName`是事件名字符串；`selector`是要delegate的子元素选择器字符串；`handlerFunction`是事件处理函数。
+其中：
+
+* `targetElement`可以是元素也可以是选择器字符串
+* `eventName`是事件名字符串
+* `selector`是要delegate的子元素选择器字符串
+* `handlerFunction`是事件处理函数
