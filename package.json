@@ -1,0 +1,5 @@
+{
+    "name": "@shenfe/jsnippet",
+    "private": true,
+    "main": "./index.js"
+}
