@@ -1,5 +1,8 @@
 {
     "name": "@shenfe/jsnippet",
     "private": true,
-    "main": "./index.js"
+    "main": "./index.js",
+    "scripts": {
+        "preinstall": "sh ./generate_index.sh"
+    }
 }

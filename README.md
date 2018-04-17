@@ -12,8 +12,9 @@
 * 不需要考虑语法特性问题，用最顺手或最酷炫的方式写，其他（babel、loader等工作）交给使用snippet的项目去做
 * 如果不在README中对兼容性等适用范围加以说明，默认snippet代码经转译处理后适用于所有（值得考虑的）浏览器场景
 
-
 ## 使用snippet
+
+### 添加依赖
 
 对于一个项目，在`package.json`中加入以下依赖：
 
@@ -22,6 +23,8 @@
     "@shenfe/jsnippet": "git@github.com:shenfe/jsnippet.git#tag_name"
 }
 ```
+
+### 使用
 
 使用一个snippet：
 
@@ -35,4 +38,12 @@ import someStuff from '@shenfe/jsnippet/someStuff'
 
 ```js
 import { someStuff } from '@shenfe/jsnippet'
+```
+
+### 更新
+
+在更新时，先将`tag_name`改成更新的tag名，然后执行：
+
+```bash
+$ npm install @shenfe/jsnippet --save
 ```
