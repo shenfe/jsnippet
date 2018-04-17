@@ -51,3 +51,7 @@ import { someStuff } from '@shenfe/jsnippet'
 ```bash
 $ npm install @shenfe/jsnippet --save
 ```
+
+## 探索更多可能
+
+如果自定义一套组件的编写和引用方式，则snippet还可以是前端组件的角色，包含html和css。类似于vue单文件组件那样。
