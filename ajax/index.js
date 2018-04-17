@@ -17,9 +17,7 @@ const ajax = function (option = {}, onSuccess, onError) {
                 let data = xhr.responseText;
                 try {
                     data = JSON.parse(data);
-                } catch (e) {
-                    return onSuccess && onSuccess(data);
-                }
+                } catch (e) {}
                 onSuccess && onSuccess(data);
             } else {
                 onError && onError(xhr);
