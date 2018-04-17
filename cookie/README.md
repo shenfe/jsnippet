@@ -16,7 +16,9 @@ $cookie.remove('name'); // 删除指定cookie
 
 其中，`set`方法的第三个参数为一个option对象，可以有以下属性：
 
-* `expires`，过期时间，为Date对象，例如`new Date(+new Date() + 1000*60*60*24)`
-* `path`，路径，为字符串，例如`/`
-* `domain`，域，为字符串，例如`.domain.com`
-* `secure`，是否只在https时传送，取布尔值
+| 属性 | 含义 | 数据类型 | 实例 |
+| :---: | :--- | :---: | :--- |
+| `expires` | 过期时间 | Date | `new Date(+new Date() + 1000*60*60*24)` |
+| `path` | 路径 | string | `/` |
+| `domain` | 域 | string | `.domain.com` |
+| `secure` | 是否只在https时传送 | boolean | `true` |
