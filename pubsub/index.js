@@ -24,6 +24,7 @@ class Pubsub {
   constructor() {
     this._store = {}
     this._listeners = {}
+    this._bubble = true
   }
 
   get(proppath) {
@@ -66,16 +67,31 @@ class Pubsub {
     parent[part] = value
 
     nextTick(() => {
-      const cbs = listeners[proppath]
-      if (!cbs || !cbs.length) return
-      cbs.forEach(cb => {
-        if (type(cb) !== 'function') return
-        cb(value)
-      })
+      const parts = proppath.split('.')
+      const curPath = []
+
+      while (true) {
+        const cbs = listeners[parts.join('.')]
+        if (!cbs || !cbs.length) return
+        cbs.forEach(cb => {
+          if (type(cb) !== 'function') return
+          cb(value, curPath.join('.'))
+        })
+
+        if (!this._bubble || !parts.length) break
+
+        curPath.unshift(parts.pop())
+      }
     })
   }
 
   watch(proppath, callback, immediate) {
+    if (type(proppath) === 'function') {
+      immediate = callback
+      callback = proppath
+      proppath = ''
+    }
+
     const listeners = this._listeners
 
     if (!listeners[proppath]) listeners[proppath] = []
