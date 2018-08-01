@@ -1,4 +1,5 @@
-module.exports = function (formatString = 'yyyy年m月d日 H:MM:ss', timestamp = +new Date()) {
+module.exports = function (formatString = 'yyyy年m月d日 H:MM:ss', timestamp) {
+    timestamp = timestamp || +new Date();
     if (typeof timestamp === 'string') {
         if (/^\d{13}$/.test(timestamp)) {
             timestamp = parseInt(timestamp);
