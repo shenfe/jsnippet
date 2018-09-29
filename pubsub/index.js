@@ -75,7 +75,7 @@ class Pubsub {
         if (!cbs || !cbs.length) return
         cbs.forEach(cb => {
           if (type(cb) !== 'function') return
-          cb(value, curPath.join('.'))
+          cb(value, curPath.join('.'), target)
         })
 
         if (!this._bubble || !parts.length) break
